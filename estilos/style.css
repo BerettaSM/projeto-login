@@ -2,10 +2,17 @@
 
 :root {
     --FONT: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    --THEME_COLOR_1: #49a09d;
-    --THEME_COLOR_2: #5f2c82;
-    --THEME_COLOR_3: #2d6462;
-    --THEME_COLOR_4: #6cd3cf;
+    /*
+    --THEME_COLOR_1: #1E2022;
+    --THEME_COLOR_2: #C9D6DF;
+    --THEME_COLOR_3: #52616B;
+    --THEME_COLOR_4: #F0F5F9;
+    */
+    --THEME_COLOR_1: #1E2022;
+    --THEME_COLOR_2: #8e99a0;
+    --THEME_COLOR_3: #52616B;
+    --THEME_COLOR_4: #F0F5F9;
+    --THEME_COLOR_5: #d5dce0;
 }
 
 * {
@@ -16,7 +23,7 @@
 }
 
 body, html {
-    background-color: var(--THEME_COLOR_2);
+    background-image: linear-gradient(to bottom, var(--THEME_COLOR_1), var(--THEME_COLOR_2));
     height: 100vh;
     width: 100vw;
 }
@@ -31,7 +38,6 @@ section#login {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     overflow: hidden;
     background-color: white;
     width: 250px;
@@ -40,6 +46,7 @@ section#login {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     transition: width .3s, height .3s;
     transition-timing-function: ease;
+    transform: translate(-50%, -50%);
 }
 
 section#login > div#imagem {
@@ -50,30 +57,58 @@ section#login > div#imagem {
 }
 
 section#login > div#formulario {
+    background-color: var(--THEME_COLOR_5);
     display: block;
     padding: 9px;
+    height: 100%;
 }
 
 div#formulario > h1 {
+    color: var(--THEME_COLOR_3);
     text-align: center;
     margin-bottom: 10px;
 }
 
 div#formulario > p {
+    color: var(--THEME_COLOR_3);
     font-size: 0.8em;
 }
 
 form > div.campo {
     background-color: var(--THEME_COLOR_2);
+    border: 2px solid var(--THEME_COLOR_2);
     width: 100%;
     display: block;
     height: 40px;
-    border-radius: 5px;
+    border-radius: 8px;
     margin: 5px 0;
 }
 
 div.campo > label {
     display: none;
+}
+
+div.campo > i {
+    color: #fff;
+    font-size: 2em;
+    width: 40px;
+    padding: 5px;
+}
+
+div.campo > input {
+    background-color: var(--THEME_COLOR_4);
+    font-size: 1em;
+    width: calc(100% - 45px);
+    height: 100%;
+    border: 0;
+    border-radius: 8px;
+    padding: 3px;
+    transform: translateY(-13px);
+}
+
+div.campo > input:focus-within {
+    background-color: var(--THEME_COLOR_5);
+    transition: .5s;
 }
 
 form > input[type=submit] {
@@ -108,7 +143,8 @@ form > a.botao {
 }
 
 form > a.botao:hover {
-    background-color: var(--THEME_COLOR_4);
+    color: #fff;
+    background-color: var(--THEME_COLOR_3);
 }
 
 form > a.botao > i {
